@@ -1,4 +1,5 @@
 const express = require("express");
+<<<<<<< HEAD
 const logger = require("../middleware/logger");
 const tasksRouter = require("./tasks");
 
@@ -28,6 +29,13 @@ app.get("/", (req, res) => {
 });
 
 // Health check
+=======
+const app = express();
+
+app.use(express.json());
+
+// Health check endpoint
+>>>>>>> 64cdd1323d62b81fd98676bf77d0226b56fdd574
 app.get("/health", (req, res) => {
   res.status(200).json({
     status: "ok",
@@ -37,7 +45,22 @@ app.get("/health", (req, res) => {
   });
 });
 
+<<<<<<< HEAD
 // 404
+=======
+// Root route
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "Neurofive Solutions Backend API",
+    version: "1.0.0",
+    endpoints: {
+      health: "GET /health",
+    },
+  });
+});
+
+// 404 fallback
+>>>>>>> 64cdd1323d62b81fd98676bf77d0226b56fdd574
 app.use((req, res) => {
   res.status(404).json({ error: "Route not found" });
 });
