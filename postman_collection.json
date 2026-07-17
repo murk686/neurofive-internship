@@ -1,0 +1,109 @@
+{
+  "info": {
+    "name": "Neurofive — Task Manager API",
+    "description": "CRUD API for Tasks — Week 1 Task 2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:3000", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/health"
+      }
+    },
+    {
+      "name": "GET All Tasks",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/tasks"
+      }
+    },
+    {
+      "name": "GET Tasks by Status (in-progress)",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/tasks?status=in-progress"
+      }
+    },
+    {
+      "name": "GET Single Task",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/tasks/1"
+      }
+    },
+    {
+      "name": "GET Task — 404 Not Found",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/tasks/999"
+      }
+    },
+    {
+      "name": "POST Create Task",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/tasks",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Deploy CRUD API to Railway\",\n  \"description\": \"Push Task 2 code and deploy live\",\n  \"status\": \"pending\",\n  \"priority\": \"high\",\n  \"dueDate\": \"2026-07-18\"\n}"
+        }
+      }
+    },
+    {
+      "name": "POST Create Task — 400 Validation Error",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/tasks",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"invalid-status\"\n}"
+        }
+      }
+    },
+    {
+      "name": "PUT Full Update Task",
+      "request": {
+        "method": "PUT",
+        "url": "{{base_url}}/tasks/1",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Set up backend project (updated)\",\n  \"description\": \"Completed and deployed to Railway\",\n  \"status\": \"completed\",\n  \"priority\": \"high\",\n  \"dueDate\": \"2026-07-16\"\n}"
+        }
+      }
+    },
+    {
+      "name": "PATCH Partial Update Task",
+      "request": {
+        "method": "PATCH",
+        "url": "{{base_url}}/tasks/2",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"completed\"\n}"
+        }
+      }
+    },
+    {
+      "name": "DELETE Task",
+      "request": {
+        "method": "DELETE",
+        "url": "{{base_url}}/tasks/2"
+      }
+    },
+    {
+      "name": "DELETE Task — 404 Not Found",
+      "request": {
+        "method": "DELETE",
+        "url": "{{base_url}}/tasks/999"
+      }
+    }
+  ]
+}
