@@ -1,5 +1,6 @@
 const express = require("express");
-const logger = require("../../middleware/logger");
+const logger = require("../middleware/logger");
+
 const tasksRouter = require("./tasks");
 
 const app = express();
