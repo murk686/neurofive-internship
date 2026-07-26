@@ -1,0 +1,20 @@
+{
+  "name": "neurofive-backend-week3",
+  "version": "1.0.0",
+  "description": "NeuroFive Backend Internship - Week 3: Validation, Error Handling & Consistent API Responses",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "joi": "^17.11.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
