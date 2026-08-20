@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NexaFlow — Brand Identity</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0A0F2C;
+    --accent: #4F6EF7;
+    --accent-light: #EEF1FF;
+    --accent-dark: #2B4AE8;
+    --white: #FFFFFF;
+    --gray-50: #F8F9FB;
+    --gray-100: #F0F2F7;
+    --gray-300: #C8CDD9;
+    --gray-500: #7A8099;
+    --gray-700: #3D4260;
+    --success: #22C55E;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--gray-50);
+    color: var(--primary);
+    line-height: 1.6;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+
+  .section {
+    background: white;
+    border-radius: 16px;
+    padding: 48px;
+    margin-bottom: 32px;
+    border: 1px solid var(--gray-100);
+  }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+
+  h1 { font-family: var(--font-display); font-size: 36px; font-weight: 700; }
+  h2 { font-family: var(--font-display); font-size: 22px; font-weight: 600; margin-bottom: 8px; }
+  h3 { font-size: 13px; font-weight: 500; color: var(--gray-500); margin-bottom: 12px; }
+
+  /* ── COVER ── */
+  .cover {
+    background: var(--primary);
+    color: white;
+    border-radius: 16px;
+    padding: 80px 48px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(79,110,247,0.15);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 200px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(79,110,247,0.08);
+  }
+  .cover-tag {
+    display: inline-block;
+    background: rgba(79,110,247,0.2);
+    color: #8FA8FA;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+  }
+  .cover h1 {
+    font-size: 52px;
+    color: white;
+    margin-bottom: 12px;
+  }
+  .cover p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+  }
+
+  /* ── LOGO ── */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .logo-box {
+    border-radius: 12px;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    border: 1px solid var(--gray-100);
+  }
+  .logo-box.light { background: white; }
+  .logo-box.dark { background: var(--primary); border-color: transparent; }
+  .logo-box.accent-bg { background: var(--accent); border-color: transparent; }
+  .logo-box.minimal { background: var(--gray-50); }
+
+  .logo-mark {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-icon svg { width: 22px; height: 22px; }
+  .logo-icon.white-bg { background: white; }
+  .logo-icon.outlined {
+    background: transparent;
+    border: 2px solid var(--accent);
+  }
+  .logo-wordmark {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: -0.02em;
+  }
+  .logo-wordmark.white { color: white; }
+  .logo-wordmark span { color: var(--accent); }
+  .logo-wordmark.on-accent span { color: white; }
+  .logo-wordmark.on-accent { color: rgba(255,255,255,0.85); }
+
+  .logo-usage-label {
+    font-size: 11px;
+    color: var(--gray-500);
+    margin-top: 12px;
+  }
+  .logo-box.dark .logo-usage-label { color: rgba(255,255,255,0.4); }
+  .logo-box.accent-bg .logo-usage-label { color: rgba(255,255,255,0.6); }
+
+  .logo-icon-only {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    background: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  /* ── COLORS ── */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .color-swatch {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--gray-100);
+  }
+  .swatch-block {
+    height: 80px;
+  }
+  .swatch-info {
+    padding: 12px;
+    background: white;
+  }
+  .swatch-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 2px;
+  }
+  .swatch-hex {
+    font-size: 11px;
+    font-family: 'Courier New', monospace;
+    color: var(--gray-500);
+  }
+  .swatch-role {
+    font-size: 10px;
+    color: var(--gray-500);
+    margin-top: 2px;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  .type-showcase { margin-top: 24px; }
+  .type-row {
+    display: flex;
+    align-items: baseline;
+    gap: 32px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .type-row:last-child { border-bottom: none; }
+  .type-meta {
+    width: 160px;
+    flex-shrink: 0;
+  }
+  .type-meta-label { font-size: 11px; font-weight: 600; color: var(--gray-500); letter-spacing: 0.06em; text-transform: uppercase; }
+  .type-meta-spec { font-size: 11px; color: var(--gray-300); font-family: monospace; margin-top: 2px; }
+  .type-sample { flex: 1; }
+
+  /* ── BUSINESS CARD ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .biz-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(10,15,44,0.12);
+    aspect-ratio: 1.75;
+    position: relative;
+  }
+  .biz-card-front {
+    background: var(--primary);
+    padding: 28px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .biz-card-front::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(79,110,247,0.15);
+  }
+  .biz-card-back {
+    background: white;
+    border: 1px solid var(--gray-100);
+    padding: 28px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .card-logo { display: flex; align-items: center; gap: 8px; }
+  .card-logo-icon {
+    width: 28px; height: 28px;
+    background: var(--accent);
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .card-wordmark { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: white; }
+  .card-wordmark span { color: var(--accent); }
+  .card-name { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: white; }
+  .card-title { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+  .card-contact { font-size: 10px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+
+  .back-tagline { font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--primary); text-align: center; }
+  .back-url { font-size: 11px; color: var(--accent); }
+  .back-divider { width: 32px; height: 1px; background: var(--gray-100); margin: 4px 0; }
+
+  /* ── LETTERHEAD ── */
+  .letterhead {
+    border: 1px solid var(--gray-100);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 24px;
+  }
+  .letterhead-header {
+    background: var(--primary);
+    padding: 24px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .letterhead-accent-bar {
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent) 0%, #8FA8FA 100%);
+  }
+  .letterhead-body {
+    padding: 40px;
+    background: white;
+  }
+  .letterhead-date { font-size: 13px; color: var(--gray-500); margin-bottom: 28px; }
+  .letterhead-recipient { margin-bottom: 24px; }
+  .letterhead-recipient p { font-size: 14px; color: var(--primary); line-height: 1.8; }
+  .letterhead-subject { font-size: 14px; font-weight: 600; margin-bottom: 20px; }
+  .letterhead-para { font-size: 13px; color: var(--gray-700); line-height: 1.8; margin-bottom: 14px; }
+  .letterhead-footer {
+    border-top: 1px solid var(--gray-100);
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--gray-50);
+  }
+  .footer-address { font-size: 11px; color: var(--gray-500); }
+  .footer-contact { font-size: 11px; color: var(--gray-500); text-align: right; }
+
+  /* ── SOCIAL PROFILE ── */
+  .social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .social-card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--gray-100);
+    background: white;
+  }
+  .social-platform-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    padding: 8px 12px 0;
+  }
+  .social-banner {
+    height: 70px;
+    background: var(--primary);
+    position: relative;
+    overflow: hidden;
+    margin: 8px;
+    border-radius: 8px;
+  }
+  .social-banner::before {
+    content: '';
+    position: absolute;
+    top: -20px; right: -20px;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: rgba(79,110,247,0.2);
+  }
+  .social-banner-text {
+    position: absolute;
+    bottom: 10px; left: 12px;
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+  }
+  .social-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid white;
+    margin: -22px 0 0 12px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  .social-body { padding: 8px 12px 16px; }
+  .social-name { font-family: var(--font-display); font-size: 13px; font-weight: 600; margin-top: 6px; }
+  .social-handle { font-size: 11px; color: var(--gray-500); }
+  .social-bio { font-size: 11px; color: var(--gray-700); margin-top: 6px; line-height: 1.5; }
+
+  /* ── BRAND GUIDELINES ── */
+  .guideline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .guideline-block {
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid var(--gray-100);
+    background: var(--gray-50);
+  }
+  .guideline-block h3 { font-size: 13px; font-weight: 600; color: var(--primary); margin-bottom: 10px; }
+  .guideline-block ul { list-style: none; }
+  .guideline-block ul li {
+    font-size: 13px;
+    color: var(--gray-700);
+    padding: 4px 0;
+    padding-left: 14px;
+    position: relative;
+  }
+  .guideline-block ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 11px;
+  }
+
+  .do-dont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .do-block { background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 10px; padding: 20px; }
+  .dont-block { background: #FFF1F2; border: 1px solid #FECDD3; border-radius: 10px; padding: 20px; }
+  .do-block h3 { color: #16A34A; font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+  .dont-block h3 { color: #E11D48; font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+  .do-block li { color: #15803D; font-size: 13px; padding: 3px 0; list-style: none; padding-left: 14px; position: relative; }
+  .dont-block li { color: #BE123C; font-size: 13px; padding: 3px 0; list-style: none; padding-left: 14px; position: relative; }
+  .do-block li::before { content: '✓'; position: absolute; left: 0; font-weight: 600; }
+  .dont-block li::before { content: '✗'; position: absolute; left: 0; font-weight: 600; }
+
+  @media print {
+    body { background: white; }
+    .section, .cover { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-tag">Brand Identity Guidelines</div>
+    <h1>NexaFlow</h1>
+    <p>AI-powered workflow automation for modern teams</p>
+    <div style="margin-top: 48px; font-size: 12px; color: rgba(255,255,255,0.3); font-weight: 400;">
+      Version 1.0 &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; 2026
+    </div>
+  </div>
+
+  <!-- LOGO -->
+  <div class="section">
+    <div class="section-label">01 — Logo System</div>
+    <h2>Logo & Wordmark</h2>
+    <p style="color: var(--gray-500); font-size: 14px;">The NexaFlow logo combines a geometric flow-node mark with the Space Grotesk wordmark. Always maintain clear space equal to the height of the "N" on all sides.</p>
+
+    <div class="logo-grid">
+      <!-- Primary on white -->
+      <div class="logo-box light">
+        <div class="logo-mark">
+          <div class="logo-icon">
+            <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="5" cy="11" r="3" fill="white"/>
+              <circle cx="17" cy="5" r="2.5" fill="white" opacity="0.7"/>
+              <circle cx="17" cy="17" r="2.5" fill="white" opacity="0.7"/>
+              <line x1="8" y1="11" x2="14.5" y2="5.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+              <line x1="8" y1="11" x2="14.5" y2="16.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+            </svg>
+          </div>
+          <span class="logo-wordmark">Nexa<span>Flow</span></span>
+        </div>
+        <div class="logo-usage-label">Primary — light backgrounds</div>
+      </div>
+
+      <!-- Primary on dark -->
+      <div class="logo-box dark">
+        <div class="logo-mark">
+          <div class="logo-icon">
+            <svg viewBox="0 0 22 22" fill="none">
+              <circle cx="5" cy="11" r="3" fill="white"/>
+              <circle cx="17" cy="5" r="2.5" fill="white" opacity="0.7"/>
+              <circle cx="17" cy="17" r="2.5" fill="white" opacity="0.7"/>
+              <line x1="8" y1="11" x2="14.5" y2="5.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+              <line x1="8" y1="11" x2="14.5" y2="16.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+            </svg>
+          </div>
+          <span class="logo-wordmark white">Nexa<span style="color:#8FA8FA">Flow</span></span>
+        </div>
+        <div class="logo-usage-label">Reversed — dark backgrounds</div>
+      </div>
+
+      <!-- On accent -->
+      <div class="logo-box accent-bg">
+        <div class="logo-mark">
+          <div class="logo-icon white-bg">
+            <svg viewBox="0 0 22 22" fill="none">
+              <circle cx="5" cy="11" r="3" fill="#4F6EF7"/>
+              <circle cx="17" cy="5" r="2.5" fill="#4F6EF7" opacity="0.7"/>
+              <circle cx="17" cy="17" r="2.5" fill="#4F6EF7" opacity="0.7"/>
+              <line x1="8" y1="11" x2="14.5" y2="5.5" stroke="#4F6EF7" stroke-width="1.5" opacity="0.6"/>
+              <line x1="8" y1="11" x2="14.5" y2="16.5" stroke="#4F6EF7" stroke-width="1.5" opacity="0.6"/>
+            </svg>
+          </div>
+          <span class="logo-wordmark on-accent">Nexa<span>Flow</span></span>
+        </div>
+        <div class="logo-usage-label">On accent — marketing use</div>
+      </div>
+
+      <!-- Icon only -->
+      <div class="logo-box minimal" style="align-items:center; justify-content: center;">
+        <div class="logo-icon-only">
+          <svg width="30" height="30" viewBox="0 0 22 22" fill="none">
+            <circle cx="5" cy="11" r="3" fill="white"/>
+            <circle cx="17" cy="5" r="2.5" fill="white" opacity="0.7"/>
+            <circle cx="17" cy="17" r="2.5" fill="white" opacity="0.7"/>
+            <line x1="8" y1="11" x2="14.5" y2="5.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+            <line x1="8" y1="11" x2="14.5" y2="16.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="logo-usage-label" style="text-align:center;">Icon only — favicon & app icon</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLOR PALETTE -->
+  <div class="section">
+    <div class="section-label">02 — Color Palette</div>
+    <h2>Brand Colors</h2>
+    <p style="color: var(--gray-500); font-size: 14px; margin-bottom: 0;">A minimal, confident palette built around deep navy and electric blue — professional, modern, and instantly recognizable.</p>
+
+    <div class="color-grid">
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#0A0F2C;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Midnight</div>
+          <div class="swatch-hex">#0A0F2C</div>
+          <div class="swatch-role">Primary / Brand</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#4F6EF7;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Flow Blue</div>
+          <div class="swatch-hex">#4F6EF7</div>
+          <div class="swatch-role">Accent / CTA</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#2B4AE8;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Deep Blue</div>
+          <div class="swatch-hex">#2B4AE8</div>
+          <div class="swatch-role">Hover / Active</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#EEF1FF;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Cloud</div>
+          <div class="swatch-hex">#EEF1FF</div>
+          <div class="swatch-role">Light Accent</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#F8F9FB; border-bottom: 1px solid #F0F2F7;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Off White</div>
+          <div class="swatch-hex">#F8F9FB</div>
+          <div class="swatch-role">Background</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TYPOGRAPHY -->
+  <div class="section">
+    <div class="section-label">03 — Typography</div>
+    <h2>Type System</h2>
+    <p style="color: var(--gray-500); font-size: 14px;">Two typefaces. Space Grotesk for headlines — geometric, confident, tech-forward. Inter for body — readable, neutral, universally trusted.</p>
+
+    <div class="type-showcase">
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-label">Display</div>
+          <div class="type-meta-spec">Space Grotesk 700<br>52px / -2%</div>
+        </div>
+        <div class="type-sample">
+          <span style="font-family:var(--font-display); font-size:52px; font-weight:700; letter-spacing:-0.02em; color:var(--primary); line-height:1.1;">Automate everything.</span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-label">Heading 1</div>
+          <div class="type-meta-spec">Space Grotesk 600<br>32px / -1%</div>
+        </div>
+        <div class="type-sample">
+          <span style="font-family:var(--font-display); font-size:32px; font-weight:600; letter-spacing:-0.01em; color:var(--primary);">AI-powered workflows</span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-label">Heading 2</div>
+          <div class="type-meta-spec">Space Grotesk 500<br>22px / 0%</div>
+        </div>
+        <div class="type-sample">
+          <span style="font-family:var(--font-display); font-size:22px; font-weight:500; color:var(--primary);">Connect your tools in minutes</span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-label">Body</div>
+          <div class="type-meta-spec">Inter 400<br>16px / 170%</div>
+        </div>
+        <div class="type-sample">
+          <span style="font-size:16px; font-weight:400; color:var(--gray-700); line-height:1.7;">NexaFlow connects your existing tools and automates repetitive workflows, so your team can focus on the work that actually matters.</span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta-label">Label / UI</div>
+          <div class="type-meta-spec">Inter 600<br>11px / 120%</div>
+        </div>
+        <div class="type-sample">
+          <span style="font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent);">Get started for free</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUSINESS CARD -->
+  <div class="section">
+    <div class="section-label">04 — Business Card</div>
+    <h2>Business Card — 3.5" × 2"</h2>
+    <p style="color: var(--gray-500); font-size: 14px;">Printed on 400gsm matte stock. Front: brand dark with spot UV on logo. Back: white with tagline.</p>
+
+    <div class="card-grid">
+      <div>
+        <div style="font-size:11px; color:var(--gray-500); margin-bottom:8px; text-transform:uppercase; letter-spacing:0.08em; font-weight:600;">Front</div>
+        <div class="biz-card">
+          <div class="biz-card-front">
+            <div class="card-logo">
+              <div class="card-logo-icon">
+                <svg width="16" height="16" viewBox="0 0 22 22" fill="none">
+                  <circle cx="5" cy="11" r="3" fill="white"/>
+                  <circle cx="17" cy="5" r="2.5" fill="white" opacity="0.7"/>
+                  <circle cx="17" cy="17" r="2.5" fill="white" opacity="0.7"/>
+                  <line x1="8" y1="11" x2="14.5" y2="5.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+                  <line x1="8" y1="11" x2="14.5" y2="16.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+                </svg>
+              </div>
+              <span class="card-wordmark">Nexa<span>Flow</span></span>
+            </div>
+            <div>
+              <div class="card-name">Murk Channa</div>
+              <div class="card-title">AI Frontend Engineer</div>
+              <div class="card-contact" style="margin-top:8px;">murk@nexaflow.io</div>
+              <div class="card-contact">+92 300 000 0000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px; color:var(--gray-500); margin-bottom:8px; text-transform:uppercase; letter-spacing:0.08em; font-weight:600;">Back</div>
+        <div class="biz-card">
+          <div class="biz-card-back">
+            <div style="width:32px; height:32px; background:var(--accent); border-radius:8px; display:flex; align-items:center; justify-content:center;">
+              <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
+                <circle cx="5" cy="11" r="3" fill="white"/>
+                <circle cx="17" cy="5" r="2.5" fill="white" opacity="0.7"/>
+                <circle cx="17" cy="17" r="2.5" fill="white" opacity="0.7"/>
+                <line x1="8" y1="11" x2="14.5" y2="5.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+                <line x1="8" y1="11" x2="14.5" y2="16.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+              </svg>
+            </div>
+            <div class="back-divider"></div>
+            <div class="back-tagline">Work smarter.<br>Flow faster.</div>
+            <div class="back-divider"></div>
+            <div class="back-url">nexaflow.io</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LETTERHEAD -->
+  <div class="section">
+    <div class="section-label">05 — Letterhead</div>
+    <h2>Official Letterhead — A4</h2>
+    <div class="letterhead">
+      <div class="letterhead-header">
+        <div class="logo-mark">
+          <div class="logo-icon" style="width:32px; height:32px; border-radius:8px;">
+            <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
+              <circle cx="5" cy="11" r="3" fill="white"/>
+              <circle cx="17" cy="5" r="2.5" fill="white" opacity="0.7"/>
+              <circle cx="17" cy="17" r="2.5" fill="white" opacity="0.7"/>
+              <line x1="8" y1="11" x2="14.5" y2="5.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+              <line x1="8" y1="11" x2="14.5" y2="16.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+            </svg>
+          </div>
+          <span style="font-family:var(--font-display); font-size:18px; font-weight:700; color:white; letter-spacing:-0.01em;">Nexa<span style="color:#8FA8FA">Flow</span></span>
+        </div>
+        <div style="font-size:11px; color:rgba(255,255,255,0.4); text-align:right;">
+          nexaflow.io &nbsp;·&nbsp; hello@nexaflow.io<br>
+          123 Innovation Drive, San Francisco, CA 94103
+        </div>
+      </div>
+      <div class="letterhead-accent-bar"></div>
+      <div class="letterhead-body">
+        <div class="letterhead-date">August 20, 2026</div>
+        <div class="letterhead-recipient">
+          <p>Mr. John Smith<br>Chief Technology Officer<br>Acme Corporation<br>New York, NY 10001</p>
+        </div>
+        <div class="letterhead-subject">Re: NexaFlow Enterprise Partnership Proposal</div>
+        <p class="letterhead-para">Dear Mr. Smith,</p>
+        <p class="letterhead-para">Thank you for your continued interest in NexaFlow's automation platform. We are excited to present this proposal outlining how NexaFlow can transform your team's productivity through intelligent workflow automation.</p>
+        <p class="letterhead-para">Our AI-powered platform seamlessly integrates with your existing tools, automating repetitive tasks and enabling your team to focus on high-impact work. Enterprise clients typically see a 40% reduction in manual workflows within the first 30 days.</p>
+        <p class="letterhead-para" style="margin-top:28px;">Warm regards,<br><br>
+        <strong>Murk Channa</strong><br>
+        <span style="color:var(--gray-500); font-size:12px;">AI Frontend Engineer, NexaFlow</span></p>
+      </div>
+      <div class="letterhead-footer">
+        <div class="footer-address">NexaFlow Inc. · 123 Innovation Drive · San Francisco, CA 94103</div>
+        <div class="footer-contact">hello@nexaflow.io · nexaflow.io · +1 (415) 000-0000</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOCIAL PROFILE -->
+  <div class="section">
+    <div class="section-label">06 — Social Media</div>
+    <h2>Profile Picture & Social Presence</h2>
+    <p style="color: var(--gray-500); font-size: 14px;">Consistent presence across LinkedIn, Twitter/X, and Instagram. Profile picture is always the icon mark on brand midnight.</p>
+
+    <div class="social-grid">
+      <!-- LinkedIn -->
+      <div class="social-card">
+        <div class="social-platform-label">LinkedIn</div>
+        <div class="social-banner">
+          <div style="position:absolute; top:10px; left:12px;">
+            <span style="font-family:var(--font-display); font-size:11px; font-weight:600; color:white;">Work smarter. Flow faster.</span>
+          </div>
+        </div>
+        <div class="social-avatar">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <circle cx="5" cy="11" r="3" fill="white"/>
+            <circle cx="17" cy="5" r="2.5" fill="white" opacity="0.7"/>
+            <circle cx="17" cy="17" r="2.5" fill="white" opacity="0.7"/>
+            <line x1="8" y1="11" x2="14.5" y2="5.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+            <line x1="8" y1="11" x2="14.5" y2="16.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="social-body">
+          <div class="social-name">NexaFlow</div>
+          <div class="social-handle">Software Company · San Francisco</div>
+          <div class="social-bio">AI-powered workflow automation for modern teams.</div>
+        </div>
+      </div>
+
+      <!-- Twitter/X -->
+      <div class="social-card">
+        <div class="social-platform-label">Twitter / X</div>
+        <div class="social-banner" style="background: #0A0F2C;">
+          <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);">
+            <span style="font-family:var(--font-display); font-size:10px; color:rgba(255,255,255,0.4);">@nexaflow</span>
+          </div>
+        </div>
+        <div class="social-avatar">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <circle cx="5" cy="11" r="3" fill="white"/>
+            <circle cx="17" cy="5" r="2.5" fill="white" opacity="0.7"/>
+            <circle cx="17" cy="17" r="2.5" fill="white" opacity="0.7"/>
+            <line x1="8" y1="11" x2="14.5" y2="5.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+            <line x1="8" y1="11" x2="14.5" y2="16.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="social-body">
+          <div class="social-name">NexaFlow</div>
+          <div class="social-handle">@nexaflow</div>
+          <div class="social-bio">Automating the boring stuff so your team can do the great stuff.</div>
+        </div>
+      </div>
+
+      <!-- Profile Picture only -->
+      <div class="social-card" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px; gap:12px;">
+        <div class="social-platform-label" style="text-align:center;">Profile Picture (1:1)</div>
+        <div style="width:80px; height:80px; border-radius:50%; background:var(--primary); display:flex; align-items:center; justify-content:center;">
+          <svg width="40" height="40" viewBox="0 0 22 22" fill="none">
+            <circle cx="5" cy="11" r="3" fill="white"/>
+            <circle cx="17" cy="5" r="2.5" fill="white" opacity="0.7"/>
+            <circle cx="17" cy="17" r="2.5" fill="white" opacity="0.7"/>
+            <line x1="8" y1="11" x2="14.5" y2="5.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+            <line x1="8" y1="11" x2="14.5" y2="16.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+          </svg>
+        </div>
+        <div style="width:48px; height:48px; border-radius:10px; background:var(--primary); display:flex; align-items:center; justify-content:center;">
+          <svg width="26" height="26" viewBox="0 0 22 22" fill="none">
+            <circle cx="5" cy="11" r="3" fill="white"/>
+            <circle cx="17" cy="5" r="2.5" fill="white" opacity="0.7"/>
+            <circle cx="17" cy="17" r="2.5" fill="white" opacity="0.7"/>
+            <line x1="8" y1="11" x2="14.5" y2="5.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+            <line x1="8" y1="11" x2="14.5" y2="16.5" stroke="white" stroke-width="1.5" opacity="0.6"/>
+          </svg>
+        </div>
+        <div style="font-size:11px; color:var(--gray-500); text-align:center;">Round · Square (app icon)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRAND GUIDELINES -->
+  <div class="section">
+    <div class="section-label">07 — Brand Guidelines</div>
+    <h2>Usage Rules</h2>
+    <p style="color: var(--gray-500); font-size: 14px;">These guidelines ensure NexaFlow looks consistent and professional everywhere it appears.</p>
+
+    <div class="guideline-grid">
+      <div class="guideline-block">
+        <h3>Voice & Tone</h3>
+        <ul>
+          <li>Confident, not arrogant</li>
+          <li>Technical, but human</li>
+          <li>Concise — every word earns its place</li>
+          <li>Empowering, never condescending</li>
+        </ul>
+      </div>
+      <div class="guideline-block">
+        <h3>Logo Rules</h3>
+        <ul>
+          <li>Minimum size: 120px wide</li>
+          <li>Clear space = height of "N"</li>
+          <li>Never stretch or skew the mark</li>
+          <li>Never place on busy photography</li>
+        </ul>
+      </div>
+      <div class="guideline-block">
+        <h3>Color Usage</h3>
+        <ul>
+          <li>Midnight is the dominant brand color</li>
+          <li>Flow Blue for interactive elements only</li>
+          <li>Never use more than 3 brand colors at once</li>
+          <li>Ensure WCAG AA contrast at all times</li>
+        </ul>
+      </div>
+      <div class="guideline-block">
+        <h3>Typography</h3>
+        <ul>
+          <li>Space Grotesk for all headings</li>
+          <li>Inter for body and UI text</li>
+          <li>Never mix more than 2 type scales</li>
+          <li>Minimum body size: 14px</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="do-dont" style="margin-top:20px;">
+      <div class="do-block">
+        <h3>✓ Do</h3>
+        <ul>
+          <li>Use approved color combinations</li>
+          <li>Maintain logo clear space</li>
+          <li>Use Space Grotesk for headlines</li>
+          <li>Keep messaging concise</li>
+          <li>Use the icon mark at small sizes</li>
+        </ul>
+      </div>
+      <div class="dont-block">
+        <h3>✗ Don't</h3>
+        <ul>
+          <li>Stretch or rotate the logo</li>
+          <li>Use unapproved colors</li>
+          <li>Place logo on low-contrast bg</li>
+          <li>Use shadows or outlines on logo</li>
+          <li>Mix with competitor branding</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:20px 0; font-size:12px; color:var(--gray-300);">
+    NexaFlow Brand Identity — Version 1.0 — 2026 — All rights reserved
+  </div>
+
+</div>
+</body>
+</html>
