@@ -5,6 +5,8 @@ require('dotenv').config({
   quiet: true,
 });
 
+const pg = require('pg');
+
 const base = {
   username: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
@@ -12,6 +14,7 @@ const base = {
   host: process.env.DB_HOST,
   port: process.env.DB_PORT || 5432,
   dialect: 'postgres',
+  dialectModule: pg,
   logging: false,
 };
 
@@ -19,6 +22,7 @@ function fromUrl(url, extra = {}) {
   return {
     use_env_variable: 'DATABASE_URL',
     dialect: 'postgres',
+    dialectModule: pg,
     dialectOptions: {
       ssl: {
         require: true,
