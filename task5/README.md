@@ -1,4 +1,5 @@
-# NeuroFive Backend — Week 3
+# NeuroFive Backend — Week 3 --task 5
+
 ## Validation, Error Handling & Consistent API Responses
 
 Built on top of the Week 2 JWT authentication system. This week's focus: making the API bulletproof — no crashes on bad input, no leaked stack traces, and a consistent response shape on every endpoint.
