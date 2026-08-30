@@ -1,0 +1,55 @@
+{
+  "name": "event-booking-api",
+  "version": "1.0.0",
+  "description": "Production-ready backend for an event booking platform - Node.js, Express, PostgreSQL, Sequelize",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:undo": "npx sequelize-cli db:migrate:undo:all",
+    "seed": "npx sequelize-cli db:seed:all",
+    "test": "NODE_ENV=test jest --runInBand --detectOpenHandles --forceExit",
+    "test:watch": "NODE_ENV=test jest --watch --runInBand",
+    "lint": "eslint src"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "postgresql",
+    "sequelize",
+    "rest-api",
+    "event-booking"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "compression": "^1.8.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.6.2",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.11.0",
+    "multer": "^2.2.0",
+    "pg": "^8.23.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.8",
+    "sequelize-cli": "^6.6.5",
+    "swagger-ui-express": "^5.0.1",
+    "uuid": "^14.0.2",
+    "yamljs": "^0.3.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "eslint": "^10.9.1",
+    "jest": "^30.4.2",
+    "nodemon": "^3.1.14",
+    "supertest": "^7.2.2"
+  }
+}
