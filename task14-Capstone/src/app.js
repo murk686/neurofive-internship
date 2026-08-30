@@ -37,8 +37,12 @@ app.get('/health', (req, res) => {
 });
 
 // --- API docs ---
-const swaggerDocument = YAML.load(path.join(__dirname, '..', 'docs', 'openapi.yaml'));
-app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+try {
+  const swaggerDocument = YAML.load(path.join(process.cwd(), 'docs', 'openapi.yaml'));
+  app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+} catch (err) {
+  console.warn('Swagger docs not available:', err.message);
+}
 
 // --- Routes ---
 app.use('/api/auth', authRoutes);
